@@ -1,5 +1,11 @@
 FROM python:3.9
 
-RUN python -m pip install -r ./requirements.txt
+WORKDIR /app
 
-CMD ['python', './app.py']
+COPY requirements.txt ./
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python", "./app.py" ]
