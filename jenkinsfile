@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push yabain/asdesmots-backend'
+        sh 'docker push yabain/ednax'
       }
     }
   }
