@@ -41,3 +41,4 @@ transformers
 torch
 transformers[torch]
 accelerate
+google-ai-generativelanguage
