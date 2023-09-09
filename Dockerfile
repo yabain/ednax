@@ -1,14 +1,14 @@
-# syntax=docker/dockerfile:1
+FROM python:3
 
-FROM python:3.9
+WORKDIR /usr/src/app
 
-WORKDIR /python-docker
+COPY requirements.txt ./
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip \
+  && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 EXPOSE 5000
 
-CMD [ "python3", "./app.py" ]
+CMD [ "python", "./app.py" ]
