@@ -10,7 +10,7 @@ from flask import (
     request,
     make_response,
 )
-from flask_core import CORS
+from flask_cors import CORS
 
 # Local modules
 import configs
