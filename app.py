@@ -3,12 +3,14 @@ import os
 import json
 from datetime import datetime
 
+
 # 3rd party moudles
 from flask import (
     jsonify,
     request,
-    make_response
+    make_response,
 )
+from flask_core import CORS
 
 # Local modules
 import configs
@@ -23,6 +25,7 @@ from webapi.services.textgenerator import TextGenerator
 # Get the application instance
 connex_app = configs.connexion_app
 connex_app.app_context().push()
+cors = CORS(connex_app, resources = {r"/api/*":{"origins":"*"}})
 
 text_generator = TextGenerator()
 
