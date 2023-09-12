@@ -1,9 +1,19 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - python3 -m venv /root/venv
+      - . /root/venv/bin/activate
+      - pip3 install --no-cache-dir -r requirements.txt
   build:
     commands:
-      - RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
-artifacts:
-  files:
-    - '**/*'
+      - echo Running tests
+
+cache:
+  paths:
+    - '/root/venv/**/*'
+    - '/root/.cache/pip/**/*'
+    - '/root/.cache/pypoetry/virtualenvs/**/*'
