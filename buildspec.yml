@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
+artifacts:
+  files:
+    - '**/*'
