@@ -17,3 +17,7 @@ cache:
     - '/root/venv/**/*'
     - '/root/.cache/pip/**/*'
     - '/root/.cache/pypoetry/virtualenvs/**/*'
+
+artifacts:
+  files:
+    - '**/*'
