@@ -8,10 +8,6 @@ phases:
       - python3 -m venv /root/venv
       - . /root/venv/bin/activate
       - pip3 install --no-cache-dir -r requirements.txt
-  build:
-    commands:
-      - echo Running tests
-
 cache:
   paths:
     - '/root/venv/**/*'
